@@ -18,6 +18,7 @@ class App extends Component {
     };
     this.addTask = this.addTask.bind(this);
     this.removeTask = this.removeTask.bind(this);
+    this.removeTaskFromList = this.removeTaskFromList.bind(this);
   }
 
   addTask(task) {
@@ -39,14 +40,23 @@ class App extends Component {
       tasks: remaining
     });
   }
+
+  removeTaskFromList(id){
+    // const remaining = 
+    this.setState({
+      tasks: this.state.tasks.filter(task => task.id !== id)
+    });
+  }
   render() {
     return (
       <div className="container">
-        <h3 className="title">Todo List</h3>
+        <div className="title">Todo List</div>
         <hr />
         <TaskInput addTask={this.addTask} />
-
-        <TaskList tasks={this.state.tasks} removeTask={this.removeTask} />
+        {
+          (!this.state.tasks.length) ? <h5>Add some items to show here...</h5> :""
+        }
+        <TaskList tasks={this.state.tasks} removeTask={this.removeTask} removeTaskFromList={this.removeTaskFromList} />
       </div>
     );
   }

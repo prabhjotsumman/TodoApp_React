@@ -13,6 +13,7 @@ const TaskApp = props => {
               {item.completed ? "✔" : "✗"}
             </button>
             {item.task}
+            <button className="btn-del" onClick={()=> props.removeTaskFromList(item.id)}>X</button>
           </li>
         );
       })}
