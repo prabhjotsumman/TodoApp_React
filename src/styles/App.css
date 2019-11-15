@@ -13,9 +13,10 @@
   font-style: normal;
 }
 
-body{
-  background: offwhite;
+body {
   font-family: "Roboto", sans-serif;
+  background-image: linear-gradient(120deg, #487eb0, #fbc531);
+  min-height: 100vh;
 }
 .container {
   width: 360px;
@@ -31,15 +32,11 @@ body{
   font-family: "billabongregular";
   font-weight: 100;
   font-size: 3em;
-  
-  color:rgb(18, 135, 212);
+  color: rgb(18, 135, 212);
 }
 
 .list-item {
   list-style: none;
-}
-span {
-  float: right;
 }
 
 body {
@@ -60,7 +57,6 @@ ul {
 }
 
 button {
-  /* float: right; */
   color: red;
   background-color: #fffdf7;
   text-decoration: none;
@@ -69,30 +65,38 @@ button {
   margin: 0px 10px 0 0;
 }
 
-.btn-del{
+.btn-del {
   float: right;
-  border:1px solid red;
-  border-radius: 35px;
-}
-
-input[type="text"] {
-  border: 2px solid #dedede;
-  background-color: white;
-  width: auto;
-  padding: 5px;
-  box-sizing: border-box;
-}
-
-input[type="text"]:hover {
-  border: 2px solid #26a7da;
+  font-size: 20px;
+  margin: 0;
+  padding: 2px;
 }
 
 @keyframes strike {
-  from { text-decoration-color: transparent; }
-  to { text-decoration-color: red; }
+  from {
+    text-decoration-color: transparent;
+  }
+  to {
+    text-decoration-color: red;
+  }
 }
-.completed{
+.completed {
   text-decoration: line-through;
-  color:red;
+  color: red;
   animation: strike 0.4s linear;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.txtb {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #000;
+  background: none;
+  padding: 10px;
+  outline: none;
+  font-size: 18px;
+}
+
+input[type="text"]:focus {
+  border-bottom: 2px solid #26a7da;
 }

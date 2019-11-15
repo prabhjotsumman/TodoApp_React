@@ -17,13 +17,13 @@ class App extends Component {
         {!this.props.tasks.length ? (
           <h5>Add some items to show here...</h5>
         ) : (
-          ""
-        )}
-        <TaskList
+          <TaskList
           tasks={this.props.tasks}
           completeTask={this.props.completeTask}
           removeTaskFromList={this.props.removeTaskFromList}
         />
+        )}
+        
       </div>
     );
   }

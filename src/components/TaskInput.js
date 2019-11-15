@@ -10,19 +10,20 @@ class TaskInput extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    if (e.target.taskname.value === "") return;
     this.props.addTask(e.target.taskname.value);
-    e.target.taskname.value="";
+    e.target.taskname.value = "";
   }
   render() {
     return (
-      <form onSubmit={(e)=>this.handleSubmit(e)}>
-          <label name="taskname">Add Task: </label>
-          <input
-            type="text"
-            placeholder="Enter task name..."
-            name="taskname"
-          ></input>
-        </form>
+      <form onSubmit={e => this.handleSubmit(e)}>
+        <input
+          type="text"
+          placeholder="Enter task name..."
+          name="taskname"
+          className="txtb"
+        ></input>
+      </form>
     );
   }
 }

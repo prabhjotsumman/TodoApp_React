@@ -13,7 +13,9 @@ const TaskApp = props => {
               {item.completed ? "✔" : "✗"}
             </button>
             {item.task}
-            <button className="btn-del" onClick={() => props.removeTaskFromList(item.id)}>X</button>
+            <button className="btn-del" onClick={() => props.removeTaskFromList(item.id)}>
+            <i className="fa fa-trash-o" ></i>
+            </button>
           </li>
         );
       })}
