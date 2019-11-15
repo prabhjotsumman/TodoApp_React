@@ -28,21 +28,18 @@ class App extends Component {
   }
 
   removeTask(id) {
-    // const remaining = this.state.tasks.filter(task => task.id !== id)
     const remaining = this.state.tasks.map(task => {
       if (task.id === id) {
         task.completed = !task.completed;
       }
       return task;
     });
-    // console.log(remaining);
     this.setState({
       tasks: remaining
     });
   }
 
   removeTaskFromList(id){
-    // const remaining = 
     this.setState({
       tasks: this.state.tasks.filter(task => task.id !== id)
     });
