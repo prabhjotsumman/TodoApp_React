@@ -9,11 +9,11 @@ const TaskApp = props => {
             className={item.completed ? "list-item completed" : "list-item "}
             key={item.id}
           >
-            <button onClick={() => props.removeTask(item.id)}>
+            <button onClick={() => props.completeTask(item.id)}>
               {item.completed ? "✔" : "✗"}
             </button>
             {item.task}
-            <button className="btn-del" onClick={()=> props.removeTaskFromList(item.id)}>X</button>
+            <button className="btn-del" onClick={() => props.removeTaskFromList(item.id)}>X</button>
           </li>
         );
       })}
